@@ -1,43 +1,73 @@
 body {
-  -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+  -webkit-touch-callout: none;
   -webkit-user-select: none;
 }
-.App {
+
+.button {
+  position: absolute;
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-#button {
-  height: 100vh;
-  width: 100vw;
+  top: 90px;
+  left: 50px;
+  height: 100px;
+  width: 100px;
   background-color: #61dafb;
+  border-bottom-width: 5;
+  border-bottom-style: solid;
+  border-radius: 100%;
 }
+.button p {
+  position: relative;
+  top: 45px;
+  margin: 0;
+}
+
+#ping {
+  position: absolute;
+  z-index: 22;
+  bottom: 0;
+  right: 0;
+}
+
+p, h1 {
+  vertical-align: center;
+  height: 5px;
+  transform: rotate(90deg);
+}
+
+#up {
+  left: 100px;
+}
+
+#down {
+  left: 0;
+}
+
+#left {
+  top: 0;
+}
+
+#right {
+  top: 180px;
+}
+
+#A {
+  left: 100px;
+  top: auto;
+  right: auto;
+  bottom: 0;
+}
+
+#B {
+  left: 100px;
+  top: auto;
+  right: auto;
+  bottom: 100px;
+}
+
+h1 {
+  position: absolute;
+  bottom: 100px;
+  left: 300px;
+}
+
+/*# sourceMappingURL=App.css.map */

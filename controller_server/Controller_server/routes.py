@@ -1,7 +1,7 @@
 from Controller_server import app, socketio
 from flask_socketio import send, emit
 from pynput.keyboard import Key, Controller
-#from time import time
+
 
 keyboard = Controller()
 
@@ -9,12 +9,18 @@ di = {"up": Key.up,
       "down": Key.down,
       "left": Key.left,
       "right": Key.right,
-      "space": Key.space}
+      "space": Key.space,
+      "A": "a",
+      "B": "b",
+      "X": "x",
+      "Y": "y"}
 
 def press_button(key):
+    print(key)
     keyboard.press(di[key])
 def release_button(key):
-    keyboard.release(di[key])
+    #keyboard.release(di[key])
+    pass
 
 @app.route("/")
 def connection():
@@ -29,7 +35,7 @@ def handle_message(msg):
 @socketio.on("button")
 def handle_button_press(data):
     if data["action"] == "press":
-        press_button(data["key"])
+        press_button(data["key"].replace(".", ""))
     if data["action"] == "release":
         release_button(data["key"])
 

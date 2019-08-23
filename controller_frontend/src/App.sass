@@ -1,0 +1,66 @@
+$button_size: 100px
+$button_distance: $button_size*1.2
+
+
+body
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+
+
+.button
+  position: absolute
+  text-align: center
+  top: ($button_size/2)*1.8
+  left: $button_size/2
+  height: $button_size
+  width: $button_size
+  background-color: #61dafb
+  border-bottom-width: 5
+  border-bottom-style: solid
+  border-radius: 100%
+
+  p
+    position: relative
+    top: ($button_size / 2) - 5
+    margin: 0
+
+#ping
+  position: absolute
+  z-index: 22
+  bottom: 0
+  right: 0
+
+p, h1
+  vertical-align: center
+  height: 5px
+  transform: rotate(90deg)
+
+#up
+  left: ($button_size/2)*2
+
+#down
+  left: 0
+
+#left
+  top: 0
+
+#right
+  top: $button_size*1.8
+
+
+#A
+  left: $button_size
+  top: auto
+  right: auto
+  bottom: 0
+
+#B
+  left: $button_size
+  top: auto
+  right: auto
+  bottom: $button_size
+
+h1
+  position: absolute
+  bottom: 100px
+  left: 300px
