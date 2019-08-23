@@ -4,6 +4,7 @@ from flask_cors import CORS
 import eventlet
 
 app = Flask(__name__)
+CORS(app)
 eventlet.monkey_patch()
 socketio = SocketIO(app, cors_allowed_origins="*", async_mode='eventlet')
 

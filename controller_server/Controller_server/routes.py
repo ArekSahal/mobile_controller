@@ -16,12 +16,12 @@ def press_button(key):
 def release_button(key):
     keyboard.release(di[key])
 
-@app.route("/")
+@app.route("/") #Just for checking connection to the server in general
 def connection():
     print("Connected to http")
     return("http connected \n")
 
-@socketio.on("message")
+@socketio.on("message") #basically only for confirmation message
 def handle_message(msg):
     print("Message: " +  msg)
     send("Message : " + msg, broadcast=True)
@@ -33,9 +33,6 @@ def handle_button_press(data):
     if data["action"] == "release":
         release_button(data["key"])
 
-@socketio.on("pings")
+@socketio.on("pings") #Don't judge
 def handle_ping(d):
     socketio.emit("reping", {"ping": d["time"]}, room=d["client"])
-
-
-
