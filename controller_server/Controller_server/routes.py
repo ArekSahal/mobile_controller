@@ -10,7 +10,7 @@ di = {"up": Key.up,
       "left": Key.left,
       "right": Key.right,
       "space": Key.space,
-      "A": "a",
+      "A": Key.space,
       "B": "b",
       "X": "x",
       "Y": "y"}
@@ -19,7 +19,7 @@ def press_button(key):
     print(key)
     keyboard.press(di[key])
 def release_button(key):
-    #keyboard.release(di[key])
+    keyboard.release(di[key])
     pass
 
 @app.route("/")
@@ -37,7 +37,7 @@ def handle_button_press(data):
     if data["action"] == "press":
         press_button(data["key"].replace(".", ""))
     if data["action"] == "release":
-        release_button(data["key"])
+        release_button(data["key"].replace(".", ""))
 
 @socketio.on("pings")
 def handle_ping(d):
